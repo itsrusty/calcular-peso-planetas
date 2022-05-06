@@ -1,0 +1,197 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    background: #0a192f;
+    scroll-behavior: smooth;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+a{
+    top: 10px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    margin: 0px 20px auto;
+    font-size: 20px;
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    color: #fff;
+}
+
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+}
+
+.container .name-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container .name-input-container .content{
+    margin: 100px auto;
+    height: 100px;
+    width: 300px;
+}
+
+.calculadora{
+    display: flex;
+    justify-content: center;
+}
+
+.calculadora h1{
+    margin: 50px auto;
+    font-size: 50px;
+}
+
+.calculadora .planets{
+    margin: 150px auto;
+    position: absolute;
+
+}
+
+.calculadora .planets .btn-planet{
+    margin: 0px 10px auto;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border: 2px solid darkgray;
+    color: #fff;
+    cursor: pointer;
+    background: transparent;
+}
+
+.calculadora .planet .btn-planet:active{
+    transform: scale(.9);
+}
+
+/* form  */
+.container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+}
+
+.container form input{
+    padding: 10px;
+    width: 300px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+.contact .form-content form{
+    margin: 100px auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact .form-content form .text_input{
+    margin: 10px auto;
+    width: 450px;
+    padding: 10px;
+    background-color: #0b2143;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+form textarea{
+    background: #062143;
+    border: none;
+    outline: none;
+    color: #fff;
+    max-width: 600px;
+    max-height: 700px;
+}
+
+form .btn{
+    width: 120px;
+    margin: 20px auto;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #64ffda;
+    border-radius: 5px;
+    color: #64ffda;
+    cursor: pointer;
+}
+
+form .btn:active{
+    transform: scale(.9);
+}
+
+@media screem and (max-width: 700px){
+    .container .calculadora h1{
+        /* font-size: 10px; */
+        /* margin: 0pzx auto; */
+        display: none;
+    }
+    .calculadora .planets{
+        margin: 500px auto;
+        position: absolute;   
+    }
+    .contact{
+        padding: 50px;
+        overflow: hidden;
+        width: 100px;
+    }
+    .contact form .text_input, textarea{
+        width: 100px;
+    }
+}
+@media (max-width:460px){
+    h1{
+        display: none;
+    }
+    form .text_input{
+        width: 340px;
+    }
+}

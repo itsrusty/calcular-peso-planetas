@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #0a192f;
+}
+.spinner {
+    margin: 100px auto;
+    border: 4px solid rgba(100, 100, 100, .1);
+    border-left-color: transparent;
+    border-radius: 50%;
+    width: 260px;
+    height: 260px;
+    animation: spin 1s linear infinite;
+}
+.smalltext{
+    font-size: 50px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+/* animation */
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

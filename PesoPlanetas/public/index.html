@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Conoce tu peso en otro planeta</title>
+</head>
+<body>
+    <section class="container">
+        <header>
+            <nav class="navigator">
+                <li><a href="#contacto">Contacto</a></li>
+            </nav>
+         </header>
+        
+         <div class="video-container">
+            <video src="./videos/world.mp4" autoplay muted loop></video>
+        </div>
+        <!-- selector container -->
+        <div class="calculadora">
+            <h1>Selecciona un planeta</h1>
+            <div class="planets">
+                <button class="animate__animated animate__bounce btn-planet" id="marte">Marte</button>
+                <button class="animate__animated animate__bounce btn-planet" id="jupiter">Jupiter</button>
+                <button class="animate__animated animate__bounce btn-planet" id="venus">Venus</button>
+                <button class="animate__animated animate__bounce btn-planet" id="saturno">Saturno</button>
+            </div>
+        </div>
+        <!-- calcular -->
+        <form id="formulario">
+            <input type="text" id="peso" placeholder="Ingresa tu peso">
+        </form>
+    </section>
+
+
+
+      <!-- contacto -->
+      <div class="contact" id="contacto">
+        <div class="form-content">
+            <form action="" id="form">
+                <input type="text" name="name" class="text_input" placeholder="Ingresa tu nombre">
+                <input type="text" name="email" class="text_input" placeholder="Ingresa tu correo">
+                <textarea name="message" cols="30" rows="10" placeholder="Escribeme un mensaje"></textarea>
+                <input type="submit" id="button" value="Enviar mensaje" class="btn">
+            </form>
+
+            email.js
+            <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+          
+          <script type="text/javascript">
+            emailjs.init('DvlQgoxkdirSIacun')
+          </script>
+        </div>
+    </div>
+
+
+    <!-- scripts email -->
+    <script>
+        const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_llnl5l9';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar mensaje';
+    //   alert('Mensaje enviado!');
+    Swal.fire({
+        icon: 'success',
+        title: 'Mensaje enviado con éxito!'
+    })
+    }, (err) => {
+      btn.value = 'Enviar email';
+      console.log(JSON.stringify(err))
+    //   alert(JSON.stringify(err));
+    });
+});
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/alerts.js"></script>
+</body>
+</html>
